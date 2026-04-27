@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery & Media | Weaves & Fuel NK — KLNK</title>
+  <meta name="description" content="Gallery, Instagram feed, TikTok content, and YouTube videos from Weaves & Fuel NK — KLNK.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .lightbox { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.95); z-index: 3000; align-items: center; justify-content: center; padding: 2rem; }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: var(--radius); }
+    .lightbox-close { position: fixed; top: 1.5rem; right: 1.5rem; width: 44px; height: 44px; background: var(--surface); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text); font-size: 1.1rem; cursor: pointer; transition: all var(--transition); z-index: 1; }
+    .lightbox-close:hover { background: var(--primary); border-color: var(--primary); }
+    .yt-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; transition: all var(--transition); }
+    .yt-card:hover { border-color: var(--primary); transform: translateY(-4px); }
+    .yt-thumb { width: 100%; aspect-ratio: 16/9; background: var(--surface-2); display: flex; align-items: center; justify-content: center; position: relative; cursor: pointer; }
+    .yt-play { width: 56px; height: 56px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: #fff; transition: transform var(--transition); }
+    .yt-thumb:hover .yt-play { transform: scale(1.1); }
+    .yt-info { padding: 1.25rem; }
+    .yt-title { font-family: var(--font-heading); font-size: 1rem; font-weight: 800; color: var(--text); letter-spacing: 0.5px; margin-bottom: 0.25rem; }
+    .yt-meta { font-family: var(--font-heading); font-size: 0.75rem; letter-spacing: 1px; color: var(--text-dim); text-transform: uppercase; }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Weaves &amp; Fuel NK — KLNK" class="nav-logo-img">
+        <span class="logo-main">WEAVES &amp; FUEL <span>NK</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="membership.html" class="nav-link">Membership</a></li><li><a href="community.html" class="nav-link">Outreach</a></li><li><a href="events.html" class="nav-link">Events</a></li><li><a href="gallery.html" class="nav-link">Gallery</a></li><li><a href="shop.html" class="nav-link">Shop</a></li><li><a href="blog.html" class="nav-link">Blog</a></li><li><a href="partners.html" class="nav-link">Partners</a></li><li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="membership.html" class="btn btn-primary btn-sm nav-cta">Join NK</a>
+      <div class="hamburger" role="button" aria-label="Menu"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html" class="mobile-link">Home</a><a href="about.html" class="mobile-link">About Us</a><a href="membership.html" class="mobile-link">Membership</a><a href="community.html" class="mobile-link">Community Outreach</a><a href="events.html" class="mobile-link">Events &amp; Rides</a><a href="gallery.html" class="mobile-link">Gallery</a><a href="shop.html" class="mobile-link">Shop</a><a href="blog.html" class="mobile-link">Blog</a><a href="partners.html" class="mobile-link">Partners</a><a href="contact.html" class="mobile-link">Contact</a>
+    <a href="membership.html" class="btn btn-primary" style="margin-top:0.5rem;justify-content:center;">Join NK</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Gallery &amp; Media</span></div>
+        <div class="section-label">Life on the Road</div>
+        <h1>Gallery &amp; <span class="text-primary">Media</span></h1>
+        <p>Photos, videos, and moments from our rides, events, and community activities.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO GALLERY -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:3rem;">
+        <span class="section-label">Photo Gallery</span>
+        <h2>Ride <span class="text-primary">Moments</span></h2>
+        <div class="red-line center"></div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item large reveal"><img src="images/bikes.jpg" alt="Group ride"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item reveal delay-1"><img src="images/fix.jpg" alt="Motorcycles"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item reveal delay-2"><img src="images/fun.jpg" alt="Riders"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item reveal delay-1"><img src="images/fun2.jpg" alt="Motorcycle close up"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item reveal delay-2"><img src="images/fun3.jpg" alt="Group ride 2"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item reveal delay-3"><img src="images/fun4.jpg" alt="Helmet gear"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item reveal delay-1"><img src="images/barbeque.jpeg" alt="Bikes parked"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item reveal delay-2"><img src="images/xmas.jpg" alt="Motorcycle riding"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+        <div class="gallery-item reveal delay-3"><img src="images/fun5.jpg" alt="Night ride"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTAGRAM -->
+  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:3rem;">
+        <span class="section-label">Instagram</span>
+        <h2>Follow <span class="text-primary">@weaves_and_fuel</span></h2>
+        <div class="red-line center"></div>
+      </div>
+      <div class="social-embed reveal">
+        <div class="social-embed-icon" style="color:#e1306c;"><i class="fa-brands fa-instagram"></i></div>
+        <div class="social-embed-handle">@weaves_and_fuel</div>
+        <p>Follow our Instagram for live ride updates, event announcements, member spotlights, and behind-the-scenes moments from The Bestest NK.</p>
+        <a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-brands fa-instagram"></i> Follow on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIKTOK -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:3rem;">
+        <span class="section-label">TikTok</span>
+        <h2>Watch <span class="text-primary">@weavesandfuel</span></h2>
+        <div class="red-line center"></div>
+      </div>
+      <div class="social-embed reveal">
+        <div class="social-embed-icon" style="color:var(--text);"><i class="fa-brands fa-tiktok"></i></div>
+        <div class="social-embed-handle">@weavesandfuel</div>
+        <p>Short-form content, ride reels, community highlights, and the raw energy of KLNK — all on TikTok. Hit follow and join the culture.</p>
+        <a href="https://www.tiktok.com/@weavesandfuel" target="_blank" rel="noopener" class="btn btn-primary"><i class="fa-brands fa-tiktok"></i> Follow on TikTok</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUTUBE -->
+  <section class="section" style="background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="text-center reveal" style="margin-bottom:3rem;">
+        <span class="section-label">YouTube</span>
+        <h2>Watch <span class="text-primary">WeavesAndFuel</span></h2>
+        <div class="red-line center"></div>
+        <p>Full ride videos, event recaps, and long-form content from The Bestest NK on YouTube.</p>
+      </div>
+      <div class="grid-3" style="gap:1.5rem;">
+        <div class="yt-card reveal delay-1">
+          <div class="yt-thumb">
+            <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=600&q=70" alt="Ride video" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0.5;">
+            <div class="yt-play" style="position:relative;z-index:1;"><i class="fa-solid fa-play" style="margin-left:4px;"></i></div>
+          </div>
+          <div class="yt-info"><div class="yt-title">KLNK Southern Bypass Full Ride Video</div><div class="yt-meta">WeavesAndFuel · April 2026</div></div>
+        </div>
+        <div class="yt-card reveal delay-2">
+          <div class="yt-thumb">
+            <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?w=600&q=70" alt="Ride video 2" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0.5;">
+            <div class="yt-play" style="position:relative;z-index:1;"><i class="fa-solid fa-play" style="margin-left:4px;"></i></div>
+          </div>
+          <div class="yt-info"><div class="yt-title">Bikers for Teule — Our CSR Story</div><div class="yt-meta">WeavesAndFuel · March 2026</div></div>
+        </div>
+        <div class="yt-card reveal delay-3">
+          <div class="yt-thumb">
+            <img src="https://images.unsplash.com/photo-1609630875171-b1321377ee65?w=600&q=70" alt="Ride video 3" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:0.5;">
+            <div class="yt-play" style="position:relative;z-index:1;"><i class="fa-solid fa-play" style="margin-left:4px;"></i></div>
+          </div>
+          <div class="yt-info"><div class="yt-title">ATGATT — Why We Never Compromise</div><div class="yt-meta">WeavesAndFuel · Feb 2026</div></div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:2.5rem;">
+        <a href="https://www.youtube.com/@WeavesAndFuel" target="_blank" rel="noopener" class="btn btn-primary btn-lg"><i class="fa-brands fa-youtube"></i> Subscribe on YouTube</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+    <img id="lightboxImg" src="" alt="Gallery image">
+  </div>
+
+  <div class="cta-banner">
+    <div class="container">
+      <h2>Your Ride Deserves<br>to Be Seen</h2>
+      <p>Tag us @weaves_and_fuel on Instagram and TikTok — your shots might feature in our next recap.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener" class="btn btn-white btn-lg"><i class="fa-brands fa-instagram"></i> Tag Us on Instagram</a>
+        <a href="https://www.tiktok.com/@weavesandfuel" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg"><i class="fa-brands fa-tiktok"></i> TikTok</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Weaves &amp; Fuel NK — KLNK" class="nav-logo-img"><span class="logo-main">WEAVES &amp; FUEL <span>NK</span></span></a><p>The Bestest NK — a safe, organized, and inclusive community of bikers along Langata Road and subsequent environs. Est. 2015.</p><div class="footer-socials"><a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/@weavesandfuel" target="_blank" rel="noopener" class="footer-social-link"><i class="fa-brands fa-tiktok"></i></a><a href="https://www.youtube.com/@WeavesAndFuel" target="_blank" rel="noopener" class="footer-social-link"><i class="fa-brands fa-youtube"></i></a></div></div>
+        <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="about.html" class="footer-link">About Us</a></li><li><a href="membership.html" class="footer-link">Membership</a></li><li><a href="events.html" class="footer-link">Events &amp; Rides</a></li><li><a href="gallery.html" class="footer-link">Gallery</a></li><li><a href="blog.html" class="footer-link">Blog</a></li></ul></div>
+        <div class="footer-col"><h4>The Community</h4><ul class="footer-links"><li><a href="community.html" class="footer-link">Bikers for Teule</a></li><li><a href="shop.html" class="footer-link">NK Merchandise</a></li><li><a href="partners.html" class="footer-link">Our Partners</a></li><li><a href="contact.html" class="footer-link">Contact Us</a></li></ul></div>
+        <div class="footer-col"><h4>Get in Touch</h4><div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:karengatariders@gmail.com">karengatariders@gmail.com</a></div><div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@karengatariders.co.ke">info@karengatariders.co.ke</a></div><div class="footer-contact-item"><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener">@weaves_and_fuel</a></div></div>
+      </div>
+      <div class="footer-bottom"><div class="footer-copyright">© 2026 Karen Langata Nyumba Kumi Riders. All rights reserved.</div><div class="footer-bottom-links"><a href="#" class="footer-bottom-link">PBAK Member</a><a href="#" class="footer-bottom-link">Bylaws</a><a href="#" class="footer-bottom-link">Code of Conduct</a></div></div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

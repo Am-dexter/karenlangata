@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & News | Weaves & Fuel NK , KLNK</title>
+  <meta name="description" content="Ride recaps, safety articles, community news, and stories from The Bestest NK , Weaves & Fuel NK (KLNK).">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .blog-hero-card { grid-column: span 2; display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .blog-hero-card .card-img { height: 100%; min-height: 320px; }
+    .blog-hero-card .card-body { padding: 2.5rem; }
+    .blog-hero-card .card-title { font-size: 1.8rem; }
+    .blog-full-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .blog-categories { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 3rem; }
+    .blog-cat { font-family: var(--font-heading); font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 0.45rem 1rem; border-radius: 20px; border: 1px solid var(--border); color: var(--text-muted); background: var(--surface); cursor: pointer; transition: all var(--transition); }
+    .blog-cat:hover, .blog-cat.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    @media (max-width: 768px) { .blog-hero-card { grid-column: span 1; grid-template-columns: 1fr; } .blog-full-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Weaves &amp; Fuel NK , KLNK" class="nav-logo-img">
+        <span class="logo-main">WEAVES &amp; FUEL <span>NK</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="membership.html" class="nav-link">Membership</a></li><li><a href="community.html" class="nav-link">Outreach</a></li><li><a href="events.html" class="nav-link">Events</a></li><li><a href="gallery.html" class="nav-link">Gallery</a></li><li><a href="shop.html" class="nav-link">Shop</a></li><li><a href="blog.html" class="nav-link">Blog</a></li><li><a href="partners.html" class="nav-link">Partners</a></li><li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="membership.html" class="btn btn-primary btn-sm nav-cta">Join NK</a>
+      <div class="hamburger" role="button" aria-label="Menu"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html" class="mobile-link">Home</a><a href="about.html" class="mobile-link">About Us</a><a href="membership.html" class="mobile-link">Membership</a><a href="community.html" class="mobile-link">Community Outreach</a><a href="events.html" class="mobile-link">Events &amp; Rides</a><a href="gallery.html" class="mobile-link">Gallery</a><a href="shop.html" class="mobile-link">Shop</a><a href="blog.html" class="mobile-link">Blog</a><a href="partners.html" class="mobile-link">Partners</a><a href="contact.html" class="mobile-link">Contact</a>
+    <a href="membership.html" class="btn btn-primary" style="margin-top:0.5rem;justify-content:center;">Join NK</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Blog &amp; News</span></div>
+        <div class="section-label">Stories from the Road</div>
+        <h1>Blog &amp; <span class="text-primary">News</span></h1>
+        <p>Ride recaps, safety guides, community stories, and everything happening in The Bestest NK.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="blog-categories">
+        <button class="blog-cat active">All Posts</button>
+        <button class="blog-cat">Ride Recaps</button>
+        <button class="blog-cat">Safety</button>
+        <button class="blog-cat">Community</button>
+        <button class="blog-cat">News</button>
+        <button class="blog-cat">Gear</button>
+      </div>
+
+      <!-- FEATURED POST -->
+      <div style="margin-bottom:3rem;">
+        <div class="section-label" style="margin-bottom:1.5rem;">Featured Post</div>
+        <div class="card blog-hero-card reveal" style="display:grid;">
+          <img src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=800&q=80" alt="Group ride" class="card-img" style="height:100%;min-height:320px;">
+          <div class="card-body" style="padding:2.5rem;display:flex;flex-direction:column;justify-content:center;">
+            <div class="card-tag">Ride Recap</div>
+            <div class="card-title" style="font-size:1.8rem;margin-bottom:0.75rem;">Southern Bypass Sprint , The April Blast</div>
+            <div class="card-meta" style="margin-bottom:1rem;"><i class="fa-solid fa-calendar" style="color:var(--primary);"></i> Apr 5, 2026 &nbsp;·&nbsp; <i class="fa-solid fa-user" style="color:var(--primary);"></i> KLNK Crew &nbsp;·&nbsp; <i class="fa-solid fa-clock" style="color:var(--primary);"></i> 5 min read</div>
+            <p style="margin-bottom:1.5rem;font-size:0.95rem;">A crew of 30 riders hit the bypass before sunrise, cutting through the morning mist with engines singing. Here's a full recap of one of our most memorable rides of the year , the route, the highlights, and the moments that made it special.</p>
+            <a href="#" class="btn btn-primary btn-sm" style="width:fit-content;">Read Full Post <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ALL POSTS GRID -->
+      <div class="section-label" style="margin-bottom:1.5rem;">All Posts</div>
+      <div class="blog-full-grid">
+        <div class="card reveal delay-1">
+          <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=600&q=80" alt="Safety gear" class="card-img">
+          <div class="card-body"><div class="card-tag">Safety</div><div class="card-title">ATGATT , Why Full Gear Is Non-Negotiable</div><div class="card-meta"><i class="fa-solid fa-calendar" style="color:var(--primary);"></i> Mar 20, 2026 &nbsp;·&nbsp; 4 min read</div><p style="font-size:0.9rem;">All The Gear, All The Time isn't just our rule , it's our culture. Here's why every NK member swears by it, and the real cost of cutting corners.</p><a href="#" class="btn btn-ghost btn-sm" style="margin-top:0.75rem;">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+        <div class="card reveal delay-2">
+          <img src="https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?w=600&q=80" alt="Community" class="card-img">
+          <div class="card-body"><div class="card-tag">Community</div><div class="card-title">Bikers for Teule: Year One Milestone</div><div class="card-meta"><i class="fa-solid fa-calendar" style="color:var(--primary);"></i> Mar 5, 2026 &nbsp;·&nbsp; 6 min read</div><p style="font-size:0.9rem;">One year in, and our 7 students are thriving. Here's what the Bikers for Teule program has achieved , and what's next for the 2026 school year.</p><a href="#" class="btn btn-ghost btn-sm" style="margin-top:0.75rem;">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+        <div class="card reveal delay-3">
+          <img src="https://images.unsplash.com/photo-1558981359-219d6364c9c8?w=600&q=80" alt="Motorcycle" class="card-img">
+          <div class="card-body"><div class="card-tag">News</div><div class="card-title">KLNK Turns 11 , A Look Back at the Journey</div><div class="card-meta"><i class="fa-solid fa-calendar" style="color:var(--primary);"></i> Feb 15, 2026 &nbsp;·&nbsp; 7 min read</div><p style="font-size:0.9rem;">11 years since that first unofficial ride. From a loose group of Nairobi bikers to a structured, PBAK-aligned community , here's the KLNK story.</p><a href="#" class="btn btn-ghost btn-sm" style="margin-top:0.75rem;">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+        <div class="card reveal delay-1">
+          <img src="https://images.unsplash.com/photo-1547549082-4bc09bb2dd55?w=600&q=80" alt="Motorcycle gear" class="card-img">
+          <div class="card-body"><div class="card-tag">Gear</div><div class="card-title">Best Motorcycle Helmets for Nairobi Riding in 2026</div><div class="card-meta"><i class="fa-solid fa-calendar" style="color:var(--primary);"></i> Feb 1, 2026 &nbsp;·&nbsp; 8 min read</div><p style="font-size:0.9rem;">Our members share their top helmet picks , from entry-level options to premium full-face lids , all tested on Nairobi's roads.</p><a href="#" class="btn btn-ghost btn-sm" style="margin-top:0.75rem;">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+        <div class="card reveal delay-2">
+          <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=600&q=80" alt="Riding" class="card-img">
+          <div class="card-body"><div class="card-tag">Ride Recap</div><div class="card-title">Lang'ata Road New Year Blast , January 2026</div><div class="card-meta"><i class="fa-solid fa-calendar" style="color:var(--primary);"></i> Jan 12, 2026 &nbsp;·&nbsp; 4 min read</div><p style="font-size:0.9rem;">We kicked off 2026 the only way KLNK knows how , saddle up and hit the road. 45 riders, one route, zero incidents. Here's how it went.</p><a href="#" class="btn btn-ghost btn-sm" style="margin-top:0.75rem;">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+        <div class="card reveal delay-3">
+          <img src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=600&q=80" alt="Night ride" class="card-img">
+          <div class="card-body"><div class="card-tag">Safety</div><div class="card-title">Night Riding Safety , KLNK's Essential Tips</div><div class="card-meta"><i class="fa-solid fa-calendar" style="color:var(--primary);"></i> Dec 20, 2025 &nbsp;·&nbsp; 5 min read</div><p style="font-size:0.9rem;">Riding after dark in Nairobi requires extra discipline. Our senior members share the rules we follow every time we ride at night.</p><a href="#" class="btn btn-ghost btn-sm" style="margin-top:0.75rem;">Read More <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:3rem;" class="reveal">
+        <button class="btn btn-outline btn-lg">Load More Posts <i class="fa-solid fa-arrow-down"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-banner">
+    <div class="container">
+      <h2>Got a Story<br>to Share?</h2>
+      <p>Ride recap, safety tip, gear review , we want to hear from the community. Reach out and contribute to the blog.</p>
+      <a href="contact.html" class="btn btn-white btn-lg"><i class="fa-solid fa-pen"></i> Submit Your Story</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Weaves &amp; Fuel NK , KLNK" class="nav-logo-img"><span class="logo-main">WEAVES &amp; FUEL <span>NK</span></span></a><p>The Bestest NK , a safe, organized, and inclusive community of bikers along Langata Road and subsequent environs. Est. 2015.</p><div class="footer-socials"><a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/@weavesandfuel" target="_blank" rel="noopener" class="footer-social-link"><i class="fa-brands fa-tiktok"></i></a><a href="https://www.youtube.com/@WeavesAndFuel" target="_blank" rel="noopener" class="footer-social-link"><i class="fa-brands fa-youtube"></i></a></div></div>
+        <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="about.html" class="footer-link">About Us</a></li><li><a href="membership.html" class="footer-link">Membership</a></li><li><a href="events.html" class="footer-link">Events &amp; Rides</a></li><li><a href="gallery.html" class="footer-link">Gallery</a></li><li><a href="blog.html" class="footer-link">Blog</a></li></ul></div>
+        <div class="footer-col"><h4>The Community</h4><ul class="footer-links"><li><a href="community.html" class="footer-link">Bikers for Teule</a></li><li><a href="shop.html" class="footer-link">NK Merchandise</a></li><li><a href="partners.html" class="footer-link">Our Partners</a></li><li><a href="contact.html" class="footer-link">Contact Us</a></li></ul></div>
+        <div class="footer-col"><h4>Get in Touch</h4><div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:karengatariders@gmail.com">karengatariders@gmail.com</a></div><div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@karengatariders.co.ke">info@karengatariders.co.ke</a></div><div class="footer-contact-item"><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener">@weaves_and_fuel</a></div></div>
+      </div>
+      <div class="footer-bottom"><div class="footer-copyright">© 2026 Karen Langata Nyumba Kumi Riders. All rights reserved.</div><div class="footer-bottom-links"><a href="#" class="footer-bottom-link">PBAK Member</a><a href="#" class="footer-bottom-link">Bylaws</a><a href="#" class="footer-bottom-link">Code of Conduct</a></div></div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    document.querySelectorAll('.blog-cat').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.blog-cat').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

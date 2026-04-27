@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & Rides | Weaves & Fuel NK — KLNK</title>
+  <meta name="description" content="Upcoming rides, meetings, and events from KLNK — Weaves & Fuel NK. RSVP and join The Bestest NK on the road.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .filter-bar { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .filter-btn { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 0.5rem 1.25rem; border-radius: 20px; border: 1px solid var(--border); color: var(--text-muted); background: var(--surface); cursor: pointer; transition: all var(--transition); }
+    .filter-btn:hover, .filter-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .rsvp-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem; }
+    .rsvp-modal.open { display: flex; }
+    .rsvp-modal-inner { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; width: 100%; max-width: 560px; position: relative; max-height: 90vh; overflow-y: auto; }
+    .rsvp-close { position: absolute; top: 1rem; right: 1rem; width: 36px; height: 36px; background: var(--surface-2); border: 1px solid var(--border); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-muted); cursor: pointer; transition: all var(--transition); font-size: 0.9rem; }
+    .rsvp-close:hover { background: var(--primary); border-color: var(--primary); color: #fff; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Weaves &amp; Fuel NK — KLNK" class="nav-logo-img">
+        <span class="logo-main">WEAVES &amp; FUEL <span>NK</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="membership.html" class="nav-link">Membership</a></li><li><a href="community.html" class="nav-link">Outreach</a></li><li><a href="events.html" class="nav-link">Events</a></li><li><a href="gallery.html" class="nav-link">Gallery</a></li><li><a href="shop.html" class="nav-link">Shop</a></li><li><a href="blog.html" class="nav-link">Blog</a></li><li><a href="partners.html" class="nav-link">Partners</a></li><li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="membership.html" class="btn btn-primary btn-sm nav-cta">Join NK</a>
+      <div class="hamburger" role="button" aria-label="Menu"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html" class="mobile-link">Home</a><a href="about.html" class="mobile-link">About Us</a><a href="membership.html" class="mobile-link">Membership</a><a href="community.html" class="mobile-link">Community Outreach</a><a href="events.html" class="mobile-link">Events &amp; Rides</a><a href="gallery.html" class="mobile-link">Gallery</a><a href="shop.html" class="mobile-link">Shop</a><a href="blog.html" class="mobile-link">Blog</a><a href="partners.html" class="mobile-link">Partners</a><a href="contact.html" class="mobile-link">Contact</a>
+    <a href="membership.html" class="btn btn-primary" style="margin-top:0.5rem;justify-content:center;">Join NK</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Events &amp; Rides</span></div>
+        <div class="section-label">Mark Your Calendar</div>
+        <h1>Events &amp; <span class="text-primary">Rides</span></h1>
+        <p>Group rides, monthly meetings, CSR events, and more. Every road deserves a crew.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="filter-bar">
+        <button class="filter-btn active">All Events</button>
+        <button class="filter-btn">Group Rides</button>
+        <button class="filter-btn">Meetings</button>
+        <button class="filter-btn">CSR Events</button>
+        <button class="filter-btn">Training</button>
+      </div>
+
+      <div style="margin-bottom:2rem;"><div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;">Upcoming Events</div></div>
+
+      <div style="display:flex;flex-direction:column;gap:1.25rem;">
+        <div class="event-card reveal">
+          <div class="event-date-block"><div class="event-day">17</div><div class="event-month">Apr</div></div>
+          <div class="event-info" style="flex:1;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+              <div>
+                <div class="card-tag">Meeting</div>
+                <div class="event-title">2nd NK Hangout of 2026</div>
+                <div class="event-meta"><span><i class="fa-solid fa-clock"></i> 6:30 PM</span><span><i class="fa-solid fa-location-dot"></i> Mangroove, Nairobi</span><span><i class="fa-solid fa-users"></i> All are welcome</span></div>
+                <p style="font-size:0.9rem;">We’re back for the 2nd NK Hangout of 2026, good vibes, great conversations, and a proper catch-up with the everyone.
+
+Date: Friday, 17th April
+Time: 6:30 PM
+Venue: TBC
+
+We’ll also be celebrating our March & April babies
+
+This is where we connect, unwind, and start shaping what the rest of 2026 looks like for the NK..</p>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="document.getElementById('rsvpModal').classList.add('open')" style="flex-shrink:0;">RSVP Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="event-card reveal delay-1">
+          <div class="event-date-block"><div class="event-day">19</div><div class="event-month">April</div></div>
+          <div class="event-info" style="flex:1;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+              <div>
+                <div class="card-tag">Group Ride</div>
+                <div class="event-title">Bikers Track Meet Up</div>
+                <div class="event-meta"><span><i class="fa-solid fa-clock"></i> 10:00 AM</span><span><i class="fa-solid fa-location-dot"></i> Whistling Moran, Athi River</span><span><i class="fa-solid fa-users"></i> Members only</span></div>
+                <p style="font-size:0.9rem;">Join the crew for our regular Saturday morning blast down Lang'ata Road. Gear up, fuel up, and let's roll. All skill levels welcome — just bring your ATGATT.</p>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="document.getElementById('rsvpModal').classList.add('open')" style="flex-shrink:0;">RSVP Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="event-card reveal delay-2">
+          <div class="event-date-block"><div class="event-day">24</div><div class="event-month">Aug</div></div>
+          <div class="event-info" style="flex:1;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+              <div>
+                <div class="card-tag">CSR Ride</div>
+                <div class="event-title">Bikers for Teule — Charity Ride &amp; Fundraiser</div>
+                <div class="event-meta"><span><i class="fa-solid fa-clock"></i> 7:00 AM</span><span><i class="fa-solid fa-location-dot"></i> Nairobi — Oloitoktok</span><span><i class="fa-solid fa-users"></i> Open to all riders</span></div>
+                <p style="font-size:0.9rem;">Ride for a cause. All proceeds from this event go directly to the Bikers for Teule fund supporting 7 high school students from Teule Children's Home.</p>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="document.getElementById('rsvpModal').classList.add('open')" style="flex-shrink:0;">RSVP Now</button>
+            </div>
+          </div>
+        </div>
+        <div class="event-card reveal delay-3">
+          <div class="event-date-block"><div class="event-day">14</div><div class="event-month">Sept</div></div>
+          <div class="event-info" style="flex:1;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+              <div>
+                <div class="card-tag">Training</div>
+                <div class="event-title">Rider Safety &amp; ATGATT Workshop</div>
+                <div class="event-meta"><span><i class="fa-solid fa-clock"></i> 9:00 AM</span><span><i class="fa-solid fa-location-dot"></i> Karen, Nairobi</span><span><i class="fa-solid fa-users"></i> All members</span></div>
+                <p style="font-size:0.9rem;">A hands-on safety workshop covering ATGATT compliance, defensive riding, emergency protocols, and first-aid basics. Mandatory for all new probationary members.</p>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="document.getElementById('rsvpModal').classList.add('open')" style="flex-shrink:0;">RSVP Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:3rem;margin-bottom:2rem;"><div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem;">Past Events</div></div>
+      <div style="display:flex;flex-direction:column;gap:1.25rem;opacity:0.5;">
+        <div class="event-card">
+          <div class="event-date-block" style="background:var(--surface-2);"><div class="event-day">5</div><div class="event-month">Mar</div></div>
+          <div class="event-info"><div class="card-tag" style="background:var(--surface-2);color:var(--text-muted);">Completed</div><div class="event-title">Wote Day Ride + Mbuzi Feast</div><div class="event-meta"><span><i class="fa-solid fa-clock"></i> 8:30 AM</span><span><i class="fa-solid fa-location-dot"></i> Wote + Emali, Machakos</span><span><i class="fa-solid fa-users"></i> 30 riders attended</span></div></div>
+        </div>
+        <div class="event-card">
+          <div class="event-date-block" style="background:var(--surface-2);"><div class="event-day">30</div><div class="event-month">Jan</div></div>
+          <div class="event-info"><div class="card-tag" style="background:var(--surface-2);color:var(--text-muted);">Completed</div><div class="event-title">KLNK January Members Meeting</div><div class="event-meta"><span><i class="fa-solid fa-clock"></i> 6:30 AM</span><span><i class="fa-solid fa-location-dot"></i> Lang'ata Area</span><span><i class="fa-solid fa-users"></i> Members only</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP MODAL -->
+  <div class="rsvp-modal" id="rsvpModal">
+    <div class="rsvp-modal-inner">
+      <button class="rsvp-close" onclick="document.getElementById('rsvpModal').classList.remove('open')"><i class="fa-solid fa-xmark"></i></button>
+      <div style="margin-bottom:2rem;">
+        <div class="section-label">Secure Your Spot</div>
+        <h3 style="font-family:var(--font-heading);font-size:1.8rem;font-weight:800;color:var(--text);letter-spacing:1px;">RSVP for This Event</h3>
+      </div>
+      <form id="rsvpForm">
+        <div class="form-grid">
+          <div class="form-group"><label class="form-label">Full Name *</label><input type="text" class="form-control" placeholder="Your full name" required></div>
+          <div class="form-group"><label class="form-label">Phone Number *</label><input type="tel" class="form-control" placeholder="+254 700 000 000" required></div>
+        </div>
+        <div class="form-group"><label class="form-label">Email Address *</label><input type="email" class="form-control" placeholder="your@email.com" required></div>
+        <div class="form-group"><label class="form-label">Bike Make &amp; Model</label><input type="text" class="form-control" placeholder="e.g. Honda CB500F"></div>
+        <div class="form-group"><label class="form-label">Riding Experience</label>
+          <select class="form-control">
+            <option value="">Select experience level</option>
+            <option>Beginner (less than 1 year)</option>
+            <option>Intermediate (1-3 years)</option>
+            <option>Experienced (3+ years)</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">ATGATT Confirmation *</label>
+          <select class="form-control" required>
+            <option value="">Confirm your gear commitment</option>
+            <option value="yes">Yes — I will arrive in full riding gear</option>
+          </select>
+        </div>
+        <div class="form-group"><label class="form-label">Message / Special Notes</label><textarea class="form-control" placeholder="Anything we should know?" style="min-height:90px;"></textarea></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;"><i class="fa-solid fa-motorcycle"></i> Confirm RSVP</button>
+        <div class="success-message" id="rsvpSuccess"><i class="fa-solid fa-circle-check"></i> RSVP confirmed! We'll see you on the road.</div>
+      </form>
+    </div>
+  </div>
+
+  <div class="cta-banner">
+    <div class="container">
+      <h2>Never Miss a Ride</h2>
+      <p>Follow us on Instagram and TikTok for real-time event updates and ride announcements.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener" class="btn btn-white btn-lg"><i class="fa-brands fa-instagram"></i> @weaves_and_fuel</a>
+        <a href="https://www.tiktok.com/@weavesandfuel" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg"><i class="fa-brands fa-tiktok"></i> @weavesandfuel</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Weaves &amp; Fuel NK — KLNK" class="nav-logo-img"><span class="logo-main">WEAVES &amp; FUEL <span>NK</span></span></a><p>The Bestest NK — a safe, organized, and inclusive community of bikers along Langata Road and subsequent environs. Est. 2015.</p><div class="footer-socials"><a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a><a href="https://www.tiktok.com/@weavesandfuel" target="_blank" rel="noopener" class="footer-social-link"><i class="fa-brands fa-tiktok"></i></a><a href="https://www.youtube.com/@WeavesAndFuel" target="_blank" rel="noopener" class="footer-social-link"><i class="fa-brands fa-youtube"></i></a></div></div>
+        <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="about.html" class="footer-link">About Us</a></li><li><a href="membership.html" class="footer-link">Membership</a></li><li><a href="events.html" class="footer-link">Events &amp; Rides</a></li><li><a href="gallery.html" class="footer-link">Gallery</a></li><li><a href="blog.html" class="footer-link">Blog</a></li></ul></div>
+        <div class="footer-col"><h4>The Community</h4><ul class="footer-links"><li><a href="community.html" class="footer-link">Bikers for Teule</a></li><li><a href="shop.html" class="footer-link">NK Merchandise</a></li><li><a href="partners.html" class="footer-link">Our Partners</a></li><li><a href="contact.html" class="footer-link">Contact Us</a></li><li><a href="#" class="footer-link">KLNK Bylaws</a></li><li><a href="#" class="footer-link">Code of Conduct</a></li></ul></div>
+        <div class="footer-col"><h4>Get in Touch</h4><div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:karengatariders@gmail.com">karengatariders@gmail.com</a></div><div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@karengatariders.co.ke">info@karengatariders.co.ke</a></div><div class="footer-contact-item"><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener">@weaves_and_fuel</a></div><div class="footer-contact-item"><i class="fa-brands fa-tiktok"></i><a href="https://www.tiktok.com/@weavesandfuel" target="_blank" rel="noopener">@weavesandfuel</a></div></div>
+      </div>
+      <div class="footer-bottom"><div class="footer-copyright">© 2026 Karen Langata Nyumba Kumi Riders. All rights reserved.</div><div class="footer-bottom-links"><a href="#" class="footer-bottom-link">PBAK Member</a><a href="#" class="footer-bottom-link">Bylaws</a><a href="#" class="footer-bottom-link">Code of Conduct</a></div></div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener('click', function(e) {
+      const modal = document.getElementById('rsvpModal');
+      if (e.target === modal) modal.classList.remove('open');
+    });
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
