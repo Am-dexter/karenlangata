@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Executive Bench | Weaves & Fuel NK — KLNK</title>
+  <meta name="description" content="Meet the leadership structure that guides Weaves & Fuel NK with vision, discipline, and governance for the 2026/27 calendar year.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .leadership-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+    .leadership-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all var(--transition); }
+    .leadership-card:hover { border-color: var(--primary); transform: translateY(-4px); box-shadow: var(--shadow-red); }
+    .leadership-photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--border); margin-bottom: 1.5rem; }
+    .leadership-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
+    .leadership-card p { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin: 0; }
+    .council-banner { position: relative; background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&q=80') center/cover no-repeat; border-radius: var(--radius-lg); min-height: 320px; overflow: hidden; display: flex; align-items: flex-end; padding: 2rem; border: 1px solid var(--border); margin-top: 2rem; }
+    .council-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.15), rgba(10,10,10,0.85)); }
+    .council-banner-content { position: relative; z-index: 1; max-width: 760px; }
+    .council-banner-content h2 { margin-bottom: 1rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; }
+    .council-banner-content p { color: rgba(255,255,255,0.88); font-size: 1rem; line-height: 1.8; }
+    .leadership-hero p { max-width: 760px; margin-top: 1.5rem; }
+    @media (max-width: 960px) { .leadership-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 680px) { .leadership-grid { grid-template-columns: 1fr; } .council-banner { min-height: 260px; padding: 1.5rem; } }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Weaves &amp; Fuel NK — KLNK" class="nav-logo-img">
+        <span class="logo-main">WEAVES &amp; FUEL <span>NK</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="leadership.html" class="nav-link">Leadership</a></li>
+        <li><a href="membership.html" class="nav-link">Membership</a></li>
+        <li><a href="community.html" class="nav-link">Outreach</a></li>
+        <li><a href="events.html" class="nav-link">Events</a></li>
+        <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="shop.html" class="nav-link">Shop</a></li>
+        <li><a href="blog.html" class="nav-link">Blog</a></li><li><a href="partners.html" class="nav-link">Partners</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="membership.html" class="btn btn-primary btn-sm nav-cta">Join NK</a>
+      <div class="hamburger" role="button" aria-label="Menu"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html" class="mobile-link">Home</a>
+    <a href="about.html" class="mobile-link">About Us</a>
+    <a href="leadership.html" class="mobile-link">Leadership</a>
+    <a href="membership.html" class="mobile-link">Membership</a>
+    <a href="community.html" class="mobile-link">Community Outreach</a>
+    <a href="events.html" class="mobile-link">Events &amp; Rides</a>
+    <a href="gallery.html" class="mobile-link">Gallery</a>
+    <a href="shop.html" class="mobile-link">Shop</a>
+    <a href="blog.html" class="mobile-link">Blog</a><a href="partners.html" class="mobile-link">Partners</a>
+    <a href="contact.html" class="mobile-link">Contact</a>
+    <a href="membership.html" class="btn btn-primary" style="margin-top:0.5rem;justify-content:center;">Join NK</a>
+  </div>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-content">
+        <div class="breadcrumb"><a href="index.html">Home</a><i class="fa-solid fa-chevron-right"></i><span>Leadership</span></div>
+        <div class="section-label">The Executive Bench</div>
+        <h1>Driven by<br><span class="text-primary">Vision</span>, Anchored in Discipline</h1>
+        <p class="hero-sub leadership-hero">Behind the seamless orchestration of #TheBestest NK is a structured governance framework bound by the KLNK Bylaws and Code of Conduct. Backed by the community and structured for the 2026/27 calendar, this leadership structure locks down strategic vision, operational excellence, and absolute accountability <strong>in every single run.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 3rem;">
+        <span class="section-label">Leadership &amp; Governance</span>
+        <h2>Committee <span class="text-primary">Structure</span></h2>
+      </div>
+      <div class="leadership-grid">
+        <div class="leadership-card">
+          <img src="images/Erick M - Chairperson.jpg" alt="Erick M, Chairperson / Executive Director" class="leadership-photo">
+          <h3>Chairperson / Executive Director</h3>
+          <p>The principal leader responsible for strategic direction, executive coordination, and the club’s long-term governance.</p>
+        </div>
+        <div class="leadership-card">
+          <img src="images/G. Muchoki - Vice Chairperson.jpg" alt="G. Muchoki, Vice Chairperson / Deputy Executive Director" class="leadership-photo">
+          <h3>Vice Chairperson / Deputy Executive Director</h3>
+          <p>Supports leadership execution, safeguards continuity, and steps in to maintain operational rhythm when the chairperson is off-road.</p>
+        </div>
+        <div class="leadership-card">
+          <img src="images/Simbolei M - Treasurer.jpg" alt="Simbolei M, Treasurer / Chief Financial Officer" class="leadership-photo">
+          <h3>Treasurer / Chief Financial Officer</h3>
+          <p>Maintains the club’s financial discipline, manages dues, and reports transparently on funding needs and expenditures.</p>
+        </div>
+        <div class="leadership-card">
+          <img src="images/Arnold B -Member Welfare.jpg" alt="Arnold B, Member Welfare Officer & Chief Whip" class="leadership-photo">
+          <h3>Member Welfare Officer &amp; Chief Whip</h3>
+          <p>Looks after member wellbeing, enforces internal accountability, and ensures every rider stays aligned with KLNK standards.</p>
+        </div>
+        <div class="leadership-card">
+          <img src="images/H. Tsuma - Safety & Training .jpg" alt="H. Tsuma, Training & Safety Officer" class="leadership-photo">
+          <h3>Training &amp; Safety Officer</h3>
+          <p>Champions ride safety, training programs, and ATGATT compliance to protect members during every single group ride.</p>
+        </div>
+        <div class="leadership-card">
+          <img src="images/Charles G. - Organising Secretary.png" alt="Charles G., Organizing Secretary" class="leadership-photo">
+          <h3>Organizing Secretary</h3>
+          <p>Coordinates meetings, manages logistics, and keeps the club’s calendar and official communication flowing clearly.</p>
+        </div>
+        <div class="leadership-card">
+          <img src="images/Eric K - Impact & Outreach.jpeg" alt="Eric K, Community Outreach Coordinator" class="leadership-photo">
+          <h3>Community Outreach Coordinator</h3>
+          <p>Leads external partnerships, outreach programs, and the club’s shared commitments to the broader community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <span class="section-label">Advisory Council</span>
+        <h2>The <span class="text-primary">Council of Advisors</span></h2>
+      </div>
+      <div class="council-banner">
+        <div class="council-banner-content">
+          <h2>The Guardians of the Legacy</h2>
+          <p>Comprising seasoned veterans and past leadership pillars who anchor long-term vision, offer high-level strategic oversight, and safeguard the historical values of Weaves &amp; Fuel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo"><img src="images/logo.png" alt="Weaves &amp; Fuel NK — KLNK" class="nav-logo-img"><span class="logo-main">WEAVES &amp; FUEL <span>NK</span></span></a>
+          <p>The Bestest NK - a safe, organized, and inclusive community of bikers along Langata Road and subsequent environs. Est. 2015.</p>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@weavesandfuel" target="_blank" rel="noopener" class="footer-social-link" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+            <a href="https://www.youtube.com/@WeavesAndFuel" target="_blank" rel="noopener" class="footer-social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="index.html" class="footer-link">Home</a></li><li><a href="about.html" class="footer-link">About Us</a></li><li><a href="leadership.html" class="footer-link">Leadership</a></li>
+            <li><a href="membership.html" class="footer-link">Membership</a></li><li><a href="events.html" class="footer-link">Events &amp; Rides</a></li><li><a href="gallery.html" class="footer-link">Gallery</a></li><li><a href="blog.html" class="footer-link">Blog</a></li></ul></div>
+        <div class="footer-col"><h4>The Community</h4><ul class="footer-links"><li><a href="community.html" class="footer-link">Bikers for Teule</a></li><li><a href="shop.html" class="footer-link">NK Merchandise</a></li><li><a href="partners.html" class="footer-link">Our Partners</a></li><li><a href="contact.html" class="footer-link">Contact Us</a></li><li><a href="#" class="footer-link">KLNK Bylaws</a></li><li><a href="#" class="footer-link">Code of Conduct</a></li></ul></div>
+        <div class="footer-col"><h4>Get in Touch</h4><div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:karengatariders@gmail.com">karengatariders@gmail.com</a></div><div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><a href="mailto:info@karengatariders.co.ke">info@karengatariders.co.ke</a></div><div class="footer-contact-item"><i class="fa-brands fa-instagram"></i><a href="https://www.instagram.com/weaves_and_fuel" target="_blank" rel="noopener">@weaves_and_fuel</a></div><div class="footer-contact-item"><i class="fa-brands fa-tiktok"></i><a href="https://www.tiktok.com/@weavesandfuel" target="_blank" rel="noopener">@weavesandfuel</a></div></div>
+      </div>
+      <div class="footer-bottom"><div class="footer-copyright">© 2026 Karen Langata Nyumba Kumi Riders. All rights reserved.</div><div class="footer-bottom-links"><a href="#" class="footer-bottom-link">PBAK Member</a><a href="#" class="footer-bottom-link">Bylaws</a><a href="#" class="footer-bottom-link">Code of Conduct</a></div></div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
+
