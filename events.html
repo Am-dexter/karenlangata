@@ -14,6 +14,14 @@
     .filter-bar { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
     .filter-btn { font-family: var(--font-heading); font-size: 0.8rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 0.5rem 1.25rem; border-radius: 20px; border: 1px solid var(--border); color: var(--text-muted); background: var(--surface); cursor: pointer; transition: all var(--transition); }
     .filter-btn:hover, .filter-btn.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .calendar-summary { margin-bottom: 2.5rem; border: 1px solid var(--border); border-radius: var(--radius-lg); background: var(--surface); overflow: hidden; }
+    .calendar-summary .section-label { margin: 0; padding: 1.5rem 1.5rem 0.5rem; color: var(--primary); letter-spacing: 3px; text-transform: uppercase; font-size: 0.75rem; font-weight: 700; }
+    .calendar-summary .calendar-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; padding: 0 1.5rem 1.5rem; }
+    .calendar-card { display: flex; flex-direction: column; gap: 0.75rem; padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: var(--surface-2); }
+    .calendar-day { font-size: 1rem; font-weight: 700; color: var(--text); }
+    .calendar-event { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
+    .calendar-type { font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+    .event-card.hidden { display: none !important; }
     .rsvp-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem; }
     .rsvp-modal.open { display: flex; }
     .rsvp-modal-inner { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; width: 100%; max-width: 560px; position: relative; max-height: 90vh; overflow-y: auto; }
@@ -55,17 +63,43 @@
   <section class="section">
     <div class="container">
       <div class="filter-bar">
-        <button class="filter-btn active">All Events</button>
-        <button class="filter-btn">Group Rides</button>
-        <button class="filter-btn">Meetings</button>
-        <button class="filter-btn">CSR Events</button>
-        <button class="filter-btn">Training</button>
+        <button class="filter-btn active" data-category="all">All Events</button>
+        <button class="filter-btn" data-category="group-ride">Group Rides</button>
+        <button class="filter-btn" data-category="meeting">Meetings</button>
+        <button class="filter-btn" data-category="csr">CSR Events</button>
+        <button class="filter-btn" data-category="training">Training</button>
+      </div>
+
+      <div class="calendar-summary">
+        <p class="section-label">Upcoming Calendar</p>
+        <div class="calendar-grid">
+          <div class="calendar-card" data-category="meeting">
+            <div class="calendar-day">Apr 17</div>
+            <div class="calendar-event">2nd NK Hangout of 2026</div>
+            <div class="calendar-type">Meeting</div>
+          </div>
+          <div class="calendar-card" data-category="group-ride">
+            <div class="calendar-day">Apr 19</div>
+            <div class="calendar-event">Bikers Track Meet Up</div>
+            <div class="calendar-type">Group Ride</div>
+          </div>
+          <div class="calendar-card" data-category="csr">
+            <div class="calendar-day">Aug 24</div>
+            <div class="calendar-event">Bikers for Teule — Charity Ride</div>
+            <div class="calendar-type">CSR Ride</div>
+          </div>
+          <div class="calendar-card" data-category="training">
+            <div class="calendar-day">Sept 14</div>
+            <div class="calendar-event">Rider Safety &amp; ATGATT Workshop</div>
+            <div class="calendar-type">Training</div>
+          </div>
+        </div>
       </div>
 
       <div style="margin-bottom:2rem;"><div style="font-family:var(--font-heading);font-size:0.75rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--primary);margin-bottom:1rem;">Upcoming Events</div></div>
 
       <div style="display:flex;flex-direction:column;gap:1.25rem;">
-        <div class="event-card reveal">
+        <div class="event-card reveal" data-category="meeting">
           <div class="event-date-block"><div class="event-day">17</div><div class="event-month">Apr</div></div>
           <div class="event-info" style="flex:1;">
             <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
@@ -87,7 +121,7 @@ This is where we connect, unwind, and start shaping what the rest of 2026 looks 
             </div>
           </div>
         </div>
-        <div class="event-card reveal delay-1">
+        <div class="event-card reveal delay-1" data-category="group-ride">
           <div class="event-date-block"><div class="event-day">19</div><div class="event-month">April</div></div>
           <div class="event-info" style="flex:1;">
             <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
@@ -101,7 +135,7 @@ This is where we connect, unwind, and start shaping what the rest of 2026 looks 
             </div>
           </div>
         </div>
-        <div class="event-card reveal delay-2">
+        <div class="event-card reveal delay-2" data-category="csr">
           <div class="event-date-block"><div class="event-day">24</div><div class="event-month">Aug</div></div>
           <div class="event-info" style="flex:1;">
             <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
@@ -115,7 +149,7 @@ This is where we connect, unwind, and start shaping what the rest of 2026 looks 
             </div>
           </div>
         </div>
-        <div class="event-card reveal delay-3">
+        <div class="event-card reveal delay-3" data-category="training">
           <div class="event-date-block"><div class="event-day">14</div><div class="event-month">Sept</div></div>
           <div class="event-info" style="flex:1;">
             <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
@@ -209,10 +243,24 @@ This is where we connect, unwind, and start shaping what the rest of 2026 looks 
       const modal = document.getElementById('rsvpModal');
       if (e.target === modal) modal.classList.remove('open');
     });
-    document.querySelectorAll('.filter-btn').forEach(btn => {
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const upcomingEventCards = document.querySelectorAll('.event-card[data-category]');
+
+    filterButtons.forEach(btn => {
       btn.addEventListener('click', function() {
-        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        filterButtons.forEach(b => b.classList.remove('active'));
         this.classList.add('active');
+
+        const selected = this.dataset.category || 'all';
+        upcomingEventCards.forEach(card => {
+          const cardCategory = card.dataset.category;
+          if (selected === 'all' || cardCategory === selected) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
       });
     });
   </script>
