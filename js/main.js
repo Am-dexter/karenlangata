@@ -108,6 +108,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ── Blog category filter ─────────────────────
+(function() {
+  const categoryButtons = document.querySelectorAll('.blog-cat');
+  const blogCards = document.querySelectorAll('.blog-full-grid .card, .blog-hero-card');
+  if (!categoryButtons.length || !blogCards.length) return;
+
+  categoryButtons.forEach(btn => {
+    btn.addEventListener('click', function () {
+      categoryButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+
+      const selected = this.dataset.category || 'all';
+      blogCards.forEach(card => {
+        const cardCategory = card.dataset.category || 'all';
+        if (selected === 'all' || cardCategory === selected) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+
 // ── Form submission handler ───────────────────
 function handleForm(formId, successId) {
   const form = document.getElementById(formId);
