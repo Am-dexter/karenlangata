@@ -17,14 +17,16 @@
     .leadership-photo { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border-radius: var(--radius-lg); border: 1px solid var(--border); margin-bottom: 1.5rem; }
     .leadership-card h3 { font-size: 1.05rem; margin-bottom: 0.5rem; color: var(--text); }
     .leadership-card p { color: var(--text-muted); line-height: 1.7; font-size: 0.95rem; margin: 0; }
-    .council-banner { position: relative; background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1600&q=80') center/cover no-repeat; border-radius: var(--radius-lg); min-height: 320px; overflow: hidden; display: flex; align-items: flex-end; padding: 2rem; border: 1px solid var(--border); margin-top: 2rem; }
-    .council-banner::before { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,0.15), rgba(10,10,10,0.85)); }
-    .council-banner-content { position: relative; z-index: 1; max-width: 760px; }
-    .council-banner-content h2 { margin-bottom: 1rem; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.05; }
-    .council-banner-content p { color: rgba(255,255,255,0.88); font-size: 1rem; line-height: 1.8; }
+    .advisor-collage { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; align-items: stretch; margin-top: 2rem; }
+    .advisor-card { flex: 1 1 220px; max-width: 320px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-soft, 0 10px 24px rgba(0,0,0,0.08)); display: flex; flex-direction: column; }
+    .advisor-image { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+    .advisor-meta { padding: 1rem; text-align: center; }
+    .advisor-meta h3 { margin: 0 0 0.5rem; font-size: 1rem; color: var(--text); }
+    .advisor-meta p { margin: 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+    .advisor-copy { max-width: 900px; margin: 2rem auto 0; color: var(--text-muted); line-height: 1.9; font-size: 1rem; text-align: center; }
     .leadership-hero p { max-width: 760px; margin-top: 1.5rem; }
     @media (max-width: 960px) { .leadership-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    @media (max-width: 680px) { .leadership-grid { grid-template-columns: 1fr; } .council-banner { min-height: 260px; padding: 1.5rem; } }
+    @media (max-width: 760px) { .advisor-collage { flex-direction: column; } .leadership-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -90,7 +92,7 @@
           <p>The principal leader responsible for strategic direction, executive coordination, and the club’s long-term governance.</p>
         </div>
         <div class="leadership-card">
-          <img src="images/G. Muchoki - Vice Chairperson.jpg" alt="G. Muchoki, Vice Chairperson / Deputy Executive Director" class="leadership-photo">
+          <img src="images/G. Muchoki - Vice Chairperson.jpeg" alt="G. Muchoki, Vice Chairperson / Deputy Executive Director" class="leadership-photo">
           <h3>Vice Chairperson / Deputy Executive Director</h3>
           <p>Supports leadership execution, safeguards continuity, and steps in to maintain operational rhythm when the chairperson is off-road.</p>
         </div>
@@ -116,8 +118,13 @@
         </div>
         <div class="leadership-card">
           <img src="images/Eric K - Impact & Outreach.jpeg" alt="Eric K, Community Outreach Coordinator" class="leadership-photo">
-          <h3>Community Outreach Coordinator</h3>
+          <h3>Impact & Outreach Coordinator</h3>
           <p>Leads external partnerships, outreach programs, and the club’s shared commitments to the broader community.</p>
+        </div>
+        <div class="leadership-card">
+          <img src="images/Vicky K - Ass. Impact & Outreach.jpeg" alt="Vicky K, Community Outreach Coordinator" class="leadership-photo">
+          <h3>Assistant Impact & Outreach Coordinator</h3>
+          <p>Assists external partnerships, outreach programs, and the club’s shared commitments to the broader community.</p>
         </div>
       </div>
     </div>
@@ -129,12 +136,30 @@
         <span class="section-label">Advisory Council</span>
         <h2>The <span class="text-primary">Council of Advisors</span></h2>
       </div>
-      <div class="council-banner">
-        <div class="council-banner-content">
-          <h2>The Guardians of the Legacy</h2>
-          <p>Comprising seasoned veterans and past leadership pillars who anchor long-term vision, offer high-level strategic oversight, and safeguard the historical values of Weaves &amp; Fuel.</p>
+      <div class="advisor-collage">
+        <div class="advisor-card">
+          <img src="images/JM - NK Council Of Advisors.png" alt="JM, Council of Advisors" class="advisor-image">
+          <div class="advisor-meta">
+            <h3>JM</h3>
+            <p>Senior advisor and guardian of the club’s legacy.</p>
+          </div>
+        </div>
+        <div class="advisor-card">
+          <img src="images/Wilton C - Council of Advisors.jpg" alt="Wilton C, Council of Advisors" class="advisor-image">
+          <div class="advisor-meta">
+            <h3>Wilton C</h3>
+            <p>Advisory council member providing strategic oversight.</p>
+          </div>
+        </div>
+        <div class="advisor-card">
+          <img src="images/Edward N - Council Of Advisors.jpg" alt="Edward N, Council of Advisors" class="advisor-image">
+          <div class="advisor-meta">
+            <h3>Edward N</h3>
+            <p>Legacy advisor with deep institutional knowledge.</p>
+          </div>
         </div>
       </div>
+      <p class="advisor-copy">These advisors bring institutional memory, veteran perspective, and strategic guidance to safeguard Weaves &amp; Fuel NK’s long-term purpose, culture, and community impact.</p>
     </div>
   </section>
 

@@ -21,7 +21,7 @@
     .calendar-day { font-size: 1rem; font-weight: 700; color: var(--text); }
     .calendar-event { font-size: 1.05rem; font-weight: 800; line-height: 1.3; }
     .calendar-type { font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
-    .event-card.hidden { display: none !important; }
+    .event-card.hidden, .calendar-card.hidden { display: none !important; }
     .rsvp-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 2000; align-items: center; justify-content: center; padding: 1.5rem; }
     .rsvp-modal.open { display: flex; }
     .rsvp-modal-inner { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; width: 100%; max-width: 560px; position: relative; max-height: 90vh; overflow-y: auto; }
@@ -399,20 +399,29 @@
     const filterButtons = document.querySelectorAll('.filter-btn');
     const filterTargets = document.querySelectorAll('.event-card[data-category], .calendar-card[data-category]');
 
+    const applyCategoryFilter = (category) => {
+      filterButtons.forEach(b => b.classList.toggle('active', b.dataset.category === category));
+      filterTargets.forEach(card => {
+        const cardCategory = card.dataset.category;
+        if (category === 'all' || cardCategory === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    };
+
+    const initialCategory = window.location.hash ? window.location.hash.replace('#', '') : 'all';
+    if (initialCategory) {
+      const validCategory = Array.from(filterButtons).some(btn => btn.dataset.category === initialCategory);
+      applyCategoryFilter(validCategory ? initialCategory : 'all');
+    }
+
     filterButtons.forEach(btn => {
       btn.addEventListener('click', function() {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-
         const selected = this.dataset.category || 'all';
-        filterTargets.forEach(card => {
-          const cardCategory = card.dataset.category;
-          if (selected === 'all' || cardCategory === selected) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
-          }
-        });
+        applyCategoryFilter(selected);
+        history.replaceState(null, '', selected === 'all' ? 'events.html' : `events.html#${selected}`);
       });
     });
   </script>
