@@ -297,37 +297,8 @@
     <div class="container">
       <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1rem;">
         <div class="reveal"><span class="section-label">Mark Your Calendar</span><h2>Upcoming <span class="text-primary">Rides</span></h2><div class="red-line"></div></div>
-        <a href="events.html" class="btn btn-outline reveal">View All Events</a>
       </div>
-      <div style="display:flex;flex-direction:column;gap:1rem;">
-        <div class="event-card reveal">
-          <div class="event-date-block"><div class="event-day">26</div><div class="event-month">Apr</div></div>
-          <div class="event-info">
-            <div class="card-tag">Group Ride</div>
-            <div class="event-title">Saturday Morning Blast-Lang'ata Road</div>
-            <div class="event-meta"><span><i class="fa-solid fa-clock"></i> 6:30 AM</span><span><i class="fa-solid fa-location-dot"></i> Karen Roundabout, Nairobi</span><span><i class="fa-solid fa-users"></i> All levels welcome</span></div>
-            <a href="events.html" class="btn btn-ghost btn-sm">RSVP Now <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="event-card reveal delay-1">
-          <div class="event-date-block"><div class="event-day">10</div><div class="event-month">May</div></div>
-          <div class="event-info">
-            <div class="card-tag">Monthly Meeting</div>
-            <div class="event-title">KLNK Monthly Members Meeting-May Edition</div>
-            <div class="event-meta"><span><i class="fa-solid fa-clock"></i> 10:00 AM</span><span><i class="fa-solid fa-location-dot"></i> TBC , Lang'ata Area</span><span><i class="fa-solid fa-users"></i> Members only</span></div>
-            <a href="events.html" class="btn btn-ghost btn-sm">RSVP Now <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-        <div class="event-card reveal delay-2">
-          <div class="event-date-block"><div class="event-day">24</div><div class="event-month">May</div></div>
-          <div class="event-info">
-            <div class="card-tag">CSR Ride</div>
-            <div class="event-title">Bikers for Teule-Charity Ride &amp; Fundraiser</div>
-            <div class="event-meta"><span><i class="fa-solid fa-clock"></i> 7:00 AM</span><span><i class="fa-solid fa-location-dot"></i> Nairobi , Route TBC</span><span><i class="fa-solid fa-users"></i> Open to all riders</span></div>
-            <a href="events.html" class="btn btn-ghost btn-sm">RSVP Now <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-      </div>
+      <div id="homeUpcoming" style="display:flex;flex-direction:column;gap:1rem;"></div>
     </div>
   </section>
 
@@ -543,6 +514,61 @@
 
       heroObserver.observe(hero);
     }
+  </script>
+
+  <script>
+    // ── Upcoming Events (synced with events.html "Upcoming Calendar") ──
+    // Shows the next 3 events whose date has not yet passed. As each event's
+    // date passes, it drops off automatically and the next one takes its place.
+    (function () {
+      const container = document.getElementById('homeUpcoming');
+      if (!container) return;
+
+      // Source of truth mirrors the "Upcoming Calendar" grid in events.html.
+      // `sort` is the date used to decide when an event has passed (TBC items
+      // use a best-estimate date so they still expire in roughly the right order).
+      const EVENTS = [
+        { day: 'May', month: 'TBC', title: 'NK Tree Planting Event',            tag: 'CSR Event',  date: 'May (Date TBC)',     sort: '2026-05-31' },
+        { day: '13',  month: 'Jun', title: 'NK Meet & Greet Hang Out',          tag: 'Hangout',    date: 'June 13',            sort: '2026-06-13' },
+        { day: '20',  month: 'Jun', title: 'NK Naivasha FUN Ride',              tag: 'Group Ride', date: 'June 20',            sort: '2026-06-20' },
+        { day: '11',  month: 'Jul', title: 'NK First Aid Training',             tag: 'Training',   date: 'July 11',            sort: '2026-07-11' },
+        { day: 'TBC', month: 'Jul', title: 'NK Theory Training',                tag: 'Training',   date: 'Date TBC',           sort: '2026-07-25' },
+        { day: '14',  month: 'Aug', title: 'NK Themed Hang Out - Game Night',   tag: 'Hangout',    date: 'August 14',          sort: '2026-08-14' },
+        { day: '5',   month: 'Sep', title: 'NK FUN Ride',                       tag: 'Group Ride', date: 'September 5',        sort: '2026-09-05' },
+        { day: 'TBC', month: 'Sep', title: 'NK Technical Training',             tag: 'Training',   date: 'Date TBC',           sort: '2026-09-10' },
+        { day: 'TBC', month: 'Sep', title: 'NK Wellness Talk Session',          tag: 'Training',   date: 'Date TBC',           sort: '2026-09-20' },
+        { day: '14',  month: 'Oct', title: 'NK Themed Hang Out - Pizza Night',  tag: 'Hangout',    date: 'October 14',         sort: '2026-10-14' },
+        { day: '31',  month: 'Oct', title: 'NK Special Event',                  tag: 'Hangout',    date: 'October 31',         sort: '2026-10-31' },
+        { day: 'TBC', month: 'Nov/Dec', title: 'Teule Early Christmas Charity Drive & Ride', tag: 'CSR Event', date: 'Nov / Dec (TBC)', sort: '2026-12-01' },
+        { day: '11',  month: 'Dec', title: 'NK End of Year Hang Out',           tag: 'Hangout',    date: 'December 11',        sort: '2026-12-11' }
+      ];
+
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const upcoming = EVENTS
+        .filter(e => new Date(e.sort + 'T00:00:00') >= today)
+        .sort((a, b) => new Date(a.sort) - new Date(b.sort))
+        .slice(0, 3);
+
+      const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+      if (!upcoming.length) {
+        container.innerHTML = '<p style="color:var(--text-muted);">New rides are being planned , check the events page for the latest calendar.</p>';
+        return;
+      }
+
+      container.innerHTML = upcoming.map((e, i) => `
+        <div class="event-card reveal visible${i ? ' delay-' + i : ''}">
+          <div class="event-date-block"><div class="event-day">${esc(e.day)}</div><div class="event-month">${esc(e.month)}</div></div>
+          <div class="event-info">
+            <div class="card-tag">${esc(e.tag)}</div>
+            <div class="event-title">${esc(e.title)}</div>
+            <div class="event-meta"><span><i class="fa-solid fa-calendar"></i> ${esc(e.date)}</span></div>
+            <a href="events.html" class="btn btn-ghost btn-sm">RSVP Now <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>`).join('');
+    })();
   </script>
 </body>
 </html>
